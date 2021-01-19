@@ -1,0 +1,302 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  mask-size: 100%;
+  background-color: #C7C7C7;
+  mask-repeat: no-repeat;
+  vertical-align: sub;
+  -webkit-mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+
+  &.icontime {
+    mask-image: url("images/Vector-3.png");
+    -webkit-mask-image: url("images/Vector-3.png");
+  }
+
+  &.iconeye {
+    mask-image: url("images/Vector-1.png");
+    -webkit-mask-image: url("images/Vector-1.png");
+  }
+
+  &.iconuser {
+    mask-image: url("assets/icons/user.svg");
+    -webkit-mask-image: url("assets/icons/user.svg");
+  }
+
+  &.iconmassage {
+    mask-image: url("images/Vector-2.png");
+    -webkit-mask-image: url("images/Vector-2.png");
+  }
+
+}
+
+
+
+$bg-color: #FAFAFA;
+$universal-color: #1F9C5E;
+.bgcolor{
+  background-color: $bg-color;
+  .container{
+    position: relative;
+      .slick-dots {
+        display: none !important;
+      }
+      .slick-prev{
+        left: unset;
+        right: 70px;
+        top: -20px;
+background-color: #BFBFBF;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+
+    }
+    .slick-next{
+      top: -20px;
+      right: 30px;
+      background-color: #BFBFBF;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+    }
+  }
+}
+.universalcolor{
+  color: $universal-color;
+}
+.bgcolor2{
+  background-color: $universal-color;
+}
+.navbar{
+  .button-group{
+    .button{
+      border: 2px solid white!important;
+    }
+  }
+}
+
+body{
+  background-color: #FAFAFA;
+  width: 100%;
+  overflow-x: hidden;
+}
+.gradient{
+  background-image: linear-gradient(to left,#DEDEE0 , white 80% )!important;
+}
+.top{
+.slick-slider {
+  .slick-prev {
+    margin-left: 150px;
+    z-index: 1;
+    &:before {
+      font-size: 40px;
+
+    }
+  }
+  .slick-next {
+    margin-right: 150px;
+    z-index: 1;
+    &:before {
+      font-size: 40px;
+
+    }
+  }
+}
+}
+.karusel{
+  background-image: url("images/karouselimg.png");
+  width: 100%;
+}
+.slick-dots{
+
+  bottom: 25px;
+  button{
+
+    &:before{
+      font-size: 15px!important;
+    }
+
+    margin-left: 5px!important;
+  }
+
+}
+.batafsil{
+  border-radius: 8px!important;
+  border: 1px solid green!important;
+  width: 42% !important;
+  &:hover{
+    background-color: green!important;
+    color: white!important;
+  }
+}
+.col-lg-12{
+  margin-top: 20px;
+  .card{
+    .card-body{
+      height: 270px!important;
+    }
+    &:hover{
+      box-shadow: 0 0  10px 1px #EBEBEB;
+      h5{
+        color: green;
+      }
+    }
+  }
+}
+.col-lg-4{
+  margin-top: 20px;
+  .card{
+    .card-body{
+
+    }
+    &:hover{
+      box-shadow: 0 0  10px 1px #EBEBEB;
+      h5{
+        color: green;
+      }
+    }
+  }
+}
+.nav-tabs{
+  .nav-item{
+    .nav-link{
+      border: 0!important;
+      button{
+        border: 0;
+        color: black;
+      }
+    }
+  }
+}
+.nav-tabs{
+  .nav-item{
+    .active{
+      border: 0!important;
+
+      button{
+        background-color: green!important;
+        color: white!important;
+        box-shadow: none;
+
+      }
+    }
+  }
+}
+
+.bg-white{
+  .container{
+    .row{
+      .col{
+        &:hover{
+          img{
+            opacity: 60%;
+          }
+          p{
+            opacity: 60%;
+          }
+          background-color: #8CCDAD!important;
+          &:before{
+            content: "data.gov.uz";
+            position: absolute;
+            top: 35%;
+            right: 20%;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+.footer{
+  background-color: #5D5D5D;
+  p{
+    color: #B2B2B2!important;
+  }
+  .line{
+    width: 100%;
+    background-color: #B2B2B2;
+    height: 2px;
+    margin-top: 25px;
+  }
+}
+textarea{
+  border: 1px solid #B2B2B2!important;
+  border-radius: 10px;
+}
+
+.color{
+  background-color: #F2F2F2!important;
+}
+
+.container{
+  .row{
+    .col-lg-4{
+      .row{
+        padding-left: 15px;
+        padding-right: 15px;
+        .col-lg-12{
+          background-color: #F2F2F2;
+          border-radius: 10px;
+
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/////////////////////admin-layout///////////////////
+
+.admin-layout{
+  .admin-navbar{
+    height: 50px;
+    background-color: #eee;
+  }
+  .admin-content{
+    .admin-content-left{
+      width: 250px;
+      height: calc(100vh - 50px);
+      background-color: #00AB7E;
+      overflow-y: auto;
+      padding: 10px 15px;
+
+      .user-image{
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        .icon{
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      h5{
+          font-size: 16px;
+      }
+      p{
+        font-size: 12px;
+      }
+    }
+    .admin-content-right{
+      width: calc(100vw - 250px);
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+  }
+}
+
+
+
+
+
