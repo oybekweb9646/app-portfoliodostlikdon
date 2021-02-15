@@ -5,10 +5,21 @@ import {connect} from "react-redux";
 import {loginUser} from "../redux/actions/authAction";
 
 class Login extends Component {
+
+    componentDidMount() {
+         function loginspinner() {
+            return function (dispatch) {
+                        dispatch({type: "CHANGE_LOADING", payload: {pageLoading: false}})
+            }
+        }
+    }
+
     render() {
 
+
+
         const login =(event, values) =>{
-this.props.loginUser(values);
+this.props.loginUser(values, this.props.history);
         };
 
         return (
@@ -33,7 +44,7 @@ this.props.loginUser(values);
     type="password"
     required
     />
-    <button type="Submit" className="btn btn-success btn-block">Login</button>
+    <button type="Submit" disabled={this.props.isLoading} className="btn btn-success btn-block">{this.props.isLoading ? <span className="spinner-border spinner-border-sm"/> : ""} Login </button>
 </AvForm>
                     </CardBody>
                 </Card>
@@ -45,4 +56,10 @@ this.props.loginUser(values);
     }
 }
 
-export default connect(null, {loginUser})(Login)
+const mapStateToProps = (state) => {
+    return {
+        isLoading: state.Login.isLoading
+    }
+};
+
+export default connect(mapStateToProps, {loginUser})(Login)

@@ -125,14 +125,22 @@ body{
   border-radius: 8px!important;
   border: 1px solid green!important;
   width: 42% !important;
+  color: green;
   &:hover{
     background-color: green!important;
     color: white!important;
   }
 }
 .col-lg-12{
+
+
+
+  .cardin{
+    height: 110px;
+  }
   margin-top: 20px;
   .card{
+
     .card-body{
       height: 270px!important;
     }
@@ -187,7 +195,7 @@ body{
 .bg-white{
   .container{
     .row{
-      .col{
+      .col-lg-4{
         &:hover{
           img{
             opacity: 60%;
@@ -200,7 +208,7 @@ body{
             content: "data.gov.uz";
             position: absolute;
             top: 35%;
-            right: 20%;
+            right: 30%;
             color: white;
             font-size: 25px;
             font-weight: bold;
@@ -292,11 +300,137 @@ textarea{
       width: calc(100vw - 250px);
       height: calc(100vh - 50px);
       overflow-y: auto;
+      padding: 10px 15px;
     }
   }
 }
 
 
+.bg-white{
 
+  .container{
+
+    ul{
+      .menu{
+
+        .innerMenu{
+          background-color: seagreen;
+          position: absolute;
+          top: 100%;
+          z-index: 2;
+          left: 0px;
+          width: 130px;
+
+          border-bottom-right-radius: 5px !important;
+          border-bottom-left-radius: 5px !important;
+
+
+        }
+
+        &:hover{
+          .ozi{
+            color: green!important;
+          }
+.innerMenu{
+  display: block!important;
+  .item{
+    padding: 10px;
+    border-bottom-right-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    &:hover{
+      background-color: green!important;
+    }
+  }
+}
+        }
+      }
+    }
+  }
+
+}
+
+
+.container{
+  .row
+  {
+    .col-lg-4{
+      margin-top: 20px;
+      .card{
+        .card-header{
+          text-align: center!important;
+        }
+
+        .card-body{
+          height: 270px!important;
+        }
+        &:hover{
+          box-shadow: 0 0  10px 1px #EBEBEB;
+          h5{
+            color: green;
+          }
+        }
+      }
+    }
+  }
+}
+
+.delete-image{
+  top: 21px;
+  right: 6px;
+  position: absolute;
+  background-color: #fff!important;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0!important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.page-loader{
+  z-index: 9999999999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 992px) {
+
+  .bgcolor{
+    .container{
+      .mobile-version{
+        display: flex!important;
+        justify-content: space-between!important;
+        margin-left: 0!important;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 992px) {
+  .gradient{
+    h3{
+      display: none!important;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .gradient{
+    display: none!important;
+    h3{
+      display: none!important;
+    }
+  }
+}
 
 

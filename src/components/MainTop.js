@@ -2,60 +2,72 @@ import React, {Component} from 'react';
 import {Col, Container, Row} from "reactstrap";
 import Slider from "react-slick";
 import MaintopSection from "./MaintopSection";
+import {getText} from "../locales/Til";
+import {connect} from "react-redux";
+import {getMenus} from "../redux/actions/adminMenusAction";
+import {getLastNews} from "../redux/actions/adminNewsAction";
+
 class MainTop extends Component {
+
+    componentDidMount() {
+        this.props.getLastNews();
+    }
+
     render() {
         const settings = {
             dots: true,
             infinite: true,
             speed: 500,
             slidesToShow: 3,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 650,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: "unslick"
+                }
+
+            ]
         };
         return (
             <div className="pt-5 bgcolor">
                 <Container>
-<div><h3>Yangiliklar</h3></div>
+<div><h3>{getText("news")}</h3></div>
                     <div>
                         <Slider {...settings}>
-                            <Row>
 
-                                <MaintopSection clas="m-auto" img="images/image 14.png" elon="Elon!!!" text=" 'DO'STLIKDONMAXSULOTLARI' AJ ning aksyadorlari diqqatiga! 2020-yil 27-mart kuni soat 9:00 da"></MaintopSection>
-                            </Row>
-                            <Row>
+                            {this.props.gotLast.map((item) => (
+                                <Row>
 
-                                <MaintopSection clas="m-auto" img="images/gerb.png" text="'O'zdonmaxsulot' aksiyadorlik kampaniya tizim korxonalari tomonidan istisno tariqasida maxalliy" elon="Eksport qiluvchi tadbirkorlik Subyektlariga..."></MaintopSection>
-                            </Row>
-                            <Row>
-                                <MaintopSection clas="m-auto card-img" text="'DO'STLIKDONMAXSULOTLARI' AJ ning boshqaruv raisi tomonidan Do'stlik tumanidagi 2-sonli..." elon="'DO'STLIKDONMAXSULOTLARI' AJ boshqaruv raisi..." img="images/girls.png"></MaintopSection>
+                                    <MaintopSection clas="m-auto card-img" img={item.photo} counted={item.viewCount} elon={item.titleUz} text={item.descriptionUz}/>
+                                </Row>
+                            ))}
 
-                            </Row>
-                            <Row>
-                                <MaintopSection clas="m-auto card-img" img="images/image 17.png"></MaintopSection>
-
-                            </Row>
 
                         </Slider>
                     </div>
-                    <div className="mt-4"><h3>Korxonamiz Yangiliklari</h3></div>
+                    <div className="mt-4"><h3>{getText("kornews")}</h3></div>
                     <div className="mt-3 mb-5">
                         <Slider {...settings}>
-                            <Row>
+                            {this.props.gotLast.map((item) => (
+                                <Row>
 
-                                <MaintopSection clas="m-auto card-img" img="images/elon.png" elon="Elon!!!" text=" 'DO'STLIKDONMAXSULOTLARI' AJ ning aksyadorlari diqqatiga! 2020-yil 27-mart kuni soat 9:00 da"></MaintopSection>
-                            </Row>
-                            <Row>
-
-                                <MaintopSection clas="m-auto card-img" img="images/girls.png" text="'O'zdonmaxsulot' aksiyadorlik kampaniya tizim korxonalari tomonidan istisno tariqasida maxalliy" elon="Eksport qiluvchi tadbirkorlik Subyektlariga..."></MaintopSection>
-                            </Row>
-                            <Row>
-                                <MaintopSection clas="m-auto card-img" text="'DO'STLIKDONMAXSULOTLARI' AJ ning boshqaruv raisi tomonidan Do'stlik tumanidagi 2-sonli..." elon="'DO'STLIKDONMAXSULOTLARI' AJ boshqaruv raisi..." img="images/javon.png"></MaintopSection>
-
-                            </Row>
-                            <Row>
-                                <MaintopSection clas="m-auto card-img" img="images/image 17.png"></MaintopSection>
-
-                            </Row>
-
+                                    <MaintopSection clas="m-auto card-img" img={item.photo} counted={item.viewCount} createdAt={item.createdAt} elon={item.titleUz} text={item.descriptionUz}/>
+                                </Row>
+                            ))}
                         </Slider>
                     </div>
                 </Container>
@@ -64,4 +76,12 @@ class MainTop extends Component {
     }
 }
 
-export default MainTop;
+
+const mapStateToProps = (state) => {
+    return{
+        gotLast: state.news.gotLast
+    }
+};
+
+
+export default connect(mapStateToProps, {getLastNews})(MainTop) ;

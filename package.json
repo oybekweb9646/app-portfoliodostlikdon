@@ -17,9 +17,11 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-slick": "^0.27.14",
+    "react-spinners": "^0.10.6",
     "react-toastify": "^6.2.0",
     "reactstrap": "^8.8.1",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^0.2.4"
   },

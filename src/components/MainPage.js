@@ -9,13 +9,13 @@ import Footer from "./Footer";
 function MainPage(props) {
     return (
         <div>
-            <FirstPage></FirstPage>
-            <Karousel></Karousel>
-            <MainTop></MainTop>
-            <GradientComponent></GradientComponent>
-            <TabsComponent></TabsComponent>
-            <BottomContent></BottomContent>
-            <Footer></Footer>
+            <FirstPage/>
+            <Karousel/>
+            <MainTop/>
+            <GradientComponent/>
+            <TabsComponent/>
+            <BottomContent/>
+            <Footer/>
         </div>
     );
 }

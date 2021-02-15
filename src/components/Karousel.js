@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Slider from "react-slick";
+import {getText} from "../locales/Til";
 class Karousel extends Component {
     render() {
 
@@ -8,21 +9,23 @@ class Karousel extends Component {
             infinite: true,
             speed: 500,
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+
         };
 
         return (
             <div className=" top">
                 <Slider {...settings}>
                     <div className="text-center karusel py-5"><img className="m-auto"  src="images/karouseltop.png" alt=""/>
-                    <h2 className="text-white mt-5 pb-5">O'ZBEKISTON RESPUBLIKASI <br/>  "O'ZDONMAXSULOT" AKSIYADORLIK KAMPANIYASI <br/> "DO'STLIKDONMAXSULATLARI" AKSIYADORLIK JAMIYATI </h2>
+                    <h2 className="text-white mt-5 pb-5">{getText("karousel")} <br/> {getText("karousel1")} <br/> {getText("karousel2")} </h2>
                     </div>
                     <div className="text-center karusel py-5"><img className="m-auto"  src="images/karouseltop.png" alt=""/>
-                        <h2 className="text-white mt-5 pb-5">O'ZBEKISTON RESPUBLIKASI <br/>  "O'ZDONMAXSULOT" AKSIYADORLIK KAMPANIYASI <br/> "DO'STLIKDONMAXSULATLARI" AKSIYADORLIK JAMIYATI </h2>
+                        <h2 className="text-white mt-5 pb-5">{getText("karousel")} <br/> {getText("karousel1")} <br/> {getText("karousel2")} </h2>
                     </div>
                     <div className="text-center karusel py-5"><img className="m-auto"  src="images/karouseltop.png" alt=""/>
-                        <h2 className="text-white mt-5 pb-5">O'ZBEKISTON RESPUBLIKASI <br/>  "O'ZDONMAXSULOT" AKSIYADORLIK KAMPANIYASI <br/> "DO'STLIKDONMAXSULATLARI" AKSIYADORLIK JAMIYATI </h2>
+                        <h2 className="text-white mt-5 pb-5">{getText("karousel")} <br/> {getText("karousel1")} <br/> {getText("karousel2")} </h2>
                     </div>
+
                 </Slider>
             </div>
         );
